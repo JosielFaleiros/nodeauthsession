@@ -1,0 +1,16 @@
+{
+  "name": "sessionauthe",
+  "version": "1.0.0",
+  "description": "Node Session Authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Session",
+    "Authentication"
+  ],
+  "author": "JosielFaleiros",
+  "license": "MIT"
+}
