@@ -4,7 +4,8 @@
   "description": "Node Session Authentication",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "Node",
@@ -20,5 +21,8 @@
     "express": "^4.15.4",
     "express-session": "^1.15.5",
     "mongoose": "^4.11.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.1"
   }
 }
