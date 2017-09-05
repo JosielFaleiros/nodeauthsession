@@ -28,11 +28,16 @@ Warning The default server-side session storage, MemoryStore, is purposely
  does not scale past a single process, 
  and is meant 
  for debugging and developing.
+ 
+ *here store set the storing to mondodb ;)
 */
 app.use(session({
     secret: 'My secret with you ;)',
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: db
+    })
 }))
 
 var routes = require('./app/routes/user_routes')
