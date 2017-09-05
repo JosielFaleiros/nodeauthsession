@@ -2,6 +2,18 @@ var express = require('express')
 var router = express.Router()
 var User = require('../models/user')
 
+var md = {
+    islogged: (req, res, next) => {
+        if (req.session && req.session.userId) {
+            return next()
+        } else {
+            var err = new Error('You must be logged to acces here :/')
+            err.status = 401
+            return next(err)
+        }
+    }
+}
+
 router.get('/', (req, res, next) => {
     res.send('Ok :D')
 })
@@ -64,4 +76,7 @@ router.get('/logout', (req, res, next) => {
     }
 })
 
+router.get('/profile', md.islogged, (req, res, next) => {
+    res.send('Profile :D ')
+})
 module.exports = router
