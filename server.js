@@ -21,6 +21,20 @@ db.once('open', () => {
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+/*
+Warning The default server-side session storage, MemoryStore, is purposely
+ not designed for a production environment. 
+ It will leak memory under most conditions, 
+ does not scale past a single process, 
+ and is meant 
+ for debugging and developing.
+*/
+app.use(session({
+    secret: 'My secret with you ;)',
+    resave: true,
+    saveUninitialized: false
+}))
+
 var routes = require('./app/routes/user_routes')
 app.use('/', routes)
 
